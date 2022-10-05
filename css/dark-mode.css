@@ -1,8 +1,8 @@
 :root{
     --main-color:white;
     --main-padding:10px;
-    --main-caret-and-color:black;
-    --main-input-bg: #DFF6FF;
+    --main-caret-and-color:white;
+    --main-input-bg: #333;
     --main-margin:20px;
     --main-border-radius:10px;
     --main-transition:0.3s;
@@ -14,7 +14,9 @@
     padding: 0;
 }
 body{
+    background-color: #121212;
     font-family: 'Cairo', 'FontAwesome', sans-serif;
+    /* direction: rtl; */
 }
 .container{
     padding: 0 25px;
@@ -24,8 +26,8 @@ body{
 input{
     border: transparent;
     padding: var(--main-padding);
-    caret-color: var(--main-caret-color);
-    color: var(--main-caret-color);
+    caret-color: var(--main-caret-and-color);
+    color: var(--main-caret-and-color);
     background-color: var(--main-input-bg);
     border-radius: var(--main-border-radius);
     -webkit-border-radius: var(--main-border-radius);
@@ -53,7 +55,7 @@ input::placeholder{
     -moz-transition:var(--main-transition);
     -ms-transition:var(--main-transition);
     -o-transition:var(--main-transition);
-    color: black;
+    color: var(--main-caret-and-color);
 }
 input:focus::placeholder{
     color: transparent;
@@ -90,10 +92,12 @@ input:focus::placeholder{
     margin: 10px 0;
     font-weight: 800;
     text-transform: uppercase;
+    color: white;
 }
 .container .head h1 + p{
     font-weight: 700;
     text-transform: uppercase;
+    color: white;
 }
 #title{
     width: 100%;
@@ -148,7 +152,7 @@ small{
 }
 button{
     color: white;
-    background-color: #06283D;
+    background-color:#332940;
     border-radius: var(--main-border-radius);
     padding: var(--main-padding);
     border: transparent;
@@ -164,7 +168,7 @@ button{
     -o-transition: 0.3s;
 }
 button:hover{
-    background-color: #256D85;
+    background-color: #bb86fc;
 }
 .category{
     display: flex;
@@ -202,16 +206,17 @@ button:hover{
 }
 table{
     width: 100%;
-    border: 1px solid black;
+    border: 1px solid white;
     text-align: center;
     margin: 0 auto;
     margin-bottom: var(--main-margin);
+    color: white;
 }
 table button{
     text-transform: uppercase;
 }
 td{
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
     padding: 10px;
 }
 tr:last-child td{
@@ -262,12 +267,13 @@ th:nth-last-child(1){
     display: none;
 }
 .footer{
-    background-color: #eee;
+    background-color: #121212;
     height: 80px;
     margin-top: 23px;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
 }
 a{
     display: flex;
@@ -283,14 +289,14 @@ a img{
     width: 15px;
 }
 .dark-icon{
-    color: black;
+    color: white;
     position: absolute;
     top: 30px;
     left: 30px;
     font-size: 40px;
     cursor: pointer;
 }
-.hide-morning{
+.hide-night{
     display: none;
 }
 .to-up{
@@ -298,13 +304,13 @@ a img{
     font-size: 20px;
     padding: 10px;
     background-color: gold;
-    color: black;
+    color: white;
     width: fit-content;
     position:sticky;
     left: 95%;
     bottom: 50px;
-    visibility: hidden;
     opacity: 0;
+    visibility: hidden;
     transition: var(--main-transition);
     -webkit-transition: var(--main-transition);
     -moz-transition: var(--main-transition);

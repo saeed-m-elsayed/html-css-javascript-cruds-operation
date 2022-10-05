@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <!-- end normalize css -->
     <!-- start master css -->
-    <link rel="stylesheet" href="css/master.css">
+    <link name="mainCss" id="main-css" rel="stylesheet" href="css/master.css">
     <!-- end master css -->
     <title>CRUDS</title>
 </head>
@@ -30,17 +30,17 @@
         <div class="inputs">
             <input type="text" name="" id="title" placeholder="Title">
             <div class="price">
-                <input type="number" id="price" placeholder="Price">
-                <input type="number" id="taxes" placeholder="Taxes">
-                <input type="number" id="ads" placeholder="Ads">
-                <input type="number" id="discount" placeholder="Discount">
+                <input onkeyup="getPrice()" type="number" id="price" placeholder="Price" min="1">
+                <input onkeyup="getPrice()" type="number" id="taxes" placeholder="Taxes">
+                <input onkeyup="getPrice()" type="number" id="ads" placeholder="Ads">
+                <input onkeyup="getPrice()" type="number" id="discount" placeholder="Discount">
             </div>
-            <div class="total">
+            <div class="total" id="total-container">
                 Total:
-                <small id="total"></small>
+                <small id="total">Enter Price</small>
             </div>
             <div class="category">
-                <input type="number" name="" id="count" placeholder="count">
+                <input onkeyup="getPrice()" type="number" name="" id="count" placeholder="count">
                 <input type="text" name="" id="category" placeholder="Category">
                 <button id="submit">CREATE</button>
             </div>
@@ -54,6 +54,7 @@
                 </div>
             </div>
         </div>
+        <button onclick="deleteAll()" class="delete hide" id="delete">DELETE ALL</button>
         <table>
             <tr>
                 <th>id</th>
@@ -67,154 +68,32 @@
                 <th>update</th>
                 <th>delete</th>
             </tr>
-            <tbody>
-                <tr>
+            <tbody id="tBody">
+                <!-- <tr>
                     <td>1</td>
                     <td>samsung</td>
-                    <td>800</td>
+                    <td>2000</td>
                     <td>200</td>
                     <td>50</td>
-                    <td>30</td>
+                    <td>20</td>
                     <td>phone</td>
-                    <td>1200</td>
-                    <td><button id="update">update</button></td>
-                    <td><button id="delete">delete</button></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>samsung</td>
-                    <td>800</td>
-                    <td>200</td>
-                    <td>50</td>
-                    <td>30</td>
-                    <td>phone</td>
-                    <td>1200</td>
-                    <td><button id="update">update</button></td>
-                    <td><button id="delete">delete</button></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>samsung</td>
-                    <td>800</td>
-                    <td>200</td>
-                    <td>50</td>
-                    <td>30</td>
-                    <td>phone</td>
-                    <td>1200</td>
-                    <td><button id="update">update</button></td>
-                    <td><button id="delete">delete</button></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>samsung</td>
-                    <td>800</td>
-                    <td>200</td>
-                    <td>50</td>
-                    <td>30</td>
-                    <td>phone</td>
-                    <td>1200</td>
-                    <td><button id="update">update</button></td>
-                    <td><button id="delete">delete</button></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>samsung</td>
-                    <td>800</td>
-                    <td>200</td>
-                    <td>50</td>
-                    <td>30</td>
-                    <td>phone</td>
-                    <td>1200</td>
-                    <td><button id="update">update</button></td>
-                    <td><button id="delete">delete</button></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>samsung</td>
-                    <td>800</td>
-                    <td>200</td>
-                    <td>50</td>
-                    <td>30</td>
-                    <td>phone</td>
-                    <td>1200</td>
-                    <td><button id="update">update</button></td>
-                    <td><button id="delete">delete</button></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>samsung</td>
-                    <td>800</td>
-                    <td>200</td>
-                    <td>50</td>
-                    <td>30</td>
-                    <td>phone</td>
-                    <td>1200</td>
-                    <td><button id="update">update</button></td>
-                    <td><button id="delete">delete</button></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>samsung</td>
-                    <td>800</td>
-                    <td>200</td>
-                    <td>50</td>
-                    <td>30</td>
-                    <td>phone</td>
-                    <td>1200</td>
-                    <td><button id="update">update</button></td>
-                    <td><button id="delete">delete</button></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>samsung</td>
-                    <td>800</td>
-                    <td>200</td>
-                    <td>50</td>
-                    <td>30</td>
-                    <td>phone</td>
-                    <td>1200</td>
-                    <td><button id="update">update</button></td>
-                    <td><button id="delete">delete</button></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>samsung</td>
-                    <td>800</td>
-                    <td>200</td>
-                    <td>50</td>
-                    <td>30</td>
-                    <td>phone</td>
-                    <td>1200</td>
-                    <td><button id="update">update</button></td>
-                    <td><button id="delete">delete</button></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>samsung</td>
-                    <td>800</td>
-                    <td>200</td>
-                    <td>50</td>
-                    <td>30</td>
-                    <td>phone</td>
-                    <td>1200</td>
-                    <td><button id="update">update</button></td>
-                    <td><button id="delete">delete</button></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>samsung</td>
-                    <td>800</td>
-                    <td>200</td>
-                    <td>50</td>
-                    <td>30</td>
-                    <td>phone</td>
-                    <td>1200</td>
-                    <td><button id="update">update</button></td>
-                    <td><button id="delete">delete</button></td>
-                </tr>
+                    <td>2230</td>
+                    <td>update</td>
+                    <td>delete</td>
+                </tr> -->
             </tbody>
         </table>
     </div>
+    <div class="to-up" id="up">
+        <i class="fa-solid fa-up-long"></i>
+    </div>
+    <div class="footer">
+        Made With &#128150; By <a href="https://www.linkedin.com/in/saeed--mohamed/" target="_blank"> Saeed Mohamed <img src="images/favicon.png" alt=""> </a>
+    </div>
+    <div onclick="mode(mainCss.href)" class="dark-icon">
+        <i  id="morning" class="fa-sharp fa-solid fa-sun hide-morning"></i>
+        <i  id="night" class="fa-solid fa-moon hide-night"></i>
+        </div>
     <script src="JS/master.js"></script>
 </body>
 </html>
