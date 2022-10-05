@@ -13,6 +13,9 @@
     margin: 0;
     padding: 0;
 }
+html{
+    -webkit-tap-highlight-color: transparent;
+}
 body{
     font-family: 'Cairo', 'FontAwesome', sans-serif;
 }
