@@ -47,10 +47,10 @@
         </div>
         <div class="outputs">
             <div class="search">
-                <input type="text" id="searchs" placeholder="&#xf002; Search">
+                <input onkeyup="searchData(this.value)" type="text" id="searchs" placeholder="&#xf002; Search">
                 <div class="search-btns">
-                    <button id="s-title">Search by title</button>
-                    <button id="s-category">Search by category</button>
+                    <button onclick="getSearchMode(this.id)"  id="s-title">Search by title</button>
+                    <button onclick="getSearchMode(this.id)"  id="s-category">Search by category</button>
                 </div>
             </div>
         </div>
