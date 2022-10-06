@@ -32,6 +32,15 @@ let mode = function (mode) {
     if (localStorage.length > 0)
     mainCss.href = localStorage.mode;
 
+
+    night.onclick = function(){
+        mainCss.href = 'css/dark-mode.css'
+    }
+    morning.onclick = function(){
+        mainCss.href = 'css/master.css'
+    }
+
+
 window.onscroll = function(){
     if(scrollY >= 300){
         up.style.visibility = 'visible'
@@ -45,12 +54,7 @@ up.onclick = function(){
     window.scrollTo({top:0,behavior:"smooth"})
 }
 
-night.onclick = function(){
-    mainCss.href = 'css/dark-mode.css'
-}
-morning.onclick = function(){
-    mainCss.href = 'css/master.css'
-}
+
 
 function getPrice(){
     if(price.value.length != "" && price.value != 0){
