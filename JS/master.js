@@ -126,14 +126,14 @@ submit.onclick = function(){
     cleanData()
     if(price.value.length != 0 && title.value.length != 0 && category.value.length != 0  && count.value <= 100){
     let newProduct = {
-        title:title.value,
+        title:title.value.toLowerCase(),
         price:price.value,
         taxes:taxes.value,
         ads:ads.value,
         discount:discount.value,
         total:totalPrice,
         count:count.value,
-        category:category.value
+        category:category.value.toLowerCase()
     }
 
     if(submitButton == 'create'){
